@@ -1,10 +1,8 @@
-The description of your challenge as seen by participants in CTFd. Try to make it feel within the theme
-of the event...
+Did you know the most visited question on StackOverflow is how to exit vim?
 
----
-If your challenge is a multi-flag one (i.e., it consists of a sequence of sub-challenges each rewarded with
-its own flag), requiring a different description for each sub-challenge, then have your descriptions split as 
-done with this paragraph, and the next one.
+Using Ned's SSH credentials (provided below), your mission is to break him out of his vimprisonment and claim the flag.
 
----
-Obviously, for each sub-challenge, you should provide its flag value in [solution/FLAGS.md](solution/FLAGS.md).
+Ned's credentials:
+
+Username: ned
+Password: nedned
