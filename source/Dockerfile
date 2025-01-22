@@ -1,33 +1,33 @@
-#########################################################################################################################
-# TODO: REPLACE THE CONTENT OF THIS FILE WITH YOUR OWN.
-#########################################################################################################################
+# Use the latest Ubuntu base image
+FROM ubuntu:latest
 
-# Use the official Python base image
-FROM python:3.10-slim
+# Set environment variables to avoid interactive prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Set the working directory
-WORKDIR /chall
+# Install required packages: vim and openssh-server
+RUN apt-get update && \
+    apt-get install -y vim openssh-server && \
+    apt-get clean
 
-# Installing Flask
-RUN pip install Flask
+# Creating the vimprison (with the flag)
+RUN echo '#!/bin/bash\ncd /home/ned/vimprison/ && export PATH="" && export YOU_HAVE_BEEN_LOOKING_FOR="ATHACKCTF{y0u_h4v3_35c4p3d_th3_vim_prison_0xdeadbeff}" && exec /usr/bin/vim "qrcode$(/usr/bin/shuf -e "1" "2" "3" -n 1)"' > /usr/local/bin/vimprison && \
+    chmod +x /usr/local/bin/vimprison
 
-# Create the example chall (chall.py)
-RUN echo "from flask import Flask\n\
-chall = Flask(__name__)\n\
-\n\
-@chall.route('/')\n\
-def hello():\n\
-    return 'Hello @Hack 2025!'\n\
-\n\
-if __name__ == '__main__':\n\
-    chall.run(host='0.0.0.0')" > chall.py
+# Create a new user (ned) and set their shell to the vim wrapper script
+RUN useradd -m -s /usr/local/bin/vimprison ned && echo "ned:nedned" | chpasswd
 
-# Set environment vars
-ENV FLASK_APP=chall.py
-ENV FLASK_RUN_PORT=2025
+# Copying files
+COPY vimprison /home/ned/vimprison
+COPY hint.txt /home/ned/hint.txt
 
-# Expose the port that the chall will run on
-EXPOSE 2025
+# Set up SSH server configuration
+RUN mkdir /var/run/sshd && \
+    sed -i 's/^#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config && \
+    sed -i 's/^#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ssh/sshd_config
 
-# Run the chall
-CMD ["flask", "run", "--host=0.0.0.0"]
+
+# Expose the SSH port
+EXPOSE 22
+
+# Start SSH service
+CMD ["/usr/sbin/sshd", "-D"]
