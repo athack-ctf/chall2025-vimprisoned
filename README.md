@@ -13,7 +13,7 @@
 
 ## Description
 
-A frustrating, yet average challenge breaking out of a restricted shell (vim-based).  
+A frustrating, yet interesting challenge consisting of breaking out of a vim-based restricted shell.  
 
 **IMPORTANT:** This description will **NOT** be shared with participants.
 
