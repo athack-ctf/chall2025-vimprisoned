@@ -4,5 +4,5 @@ Using Ned's SSH credentials (provided below), your mission is to break him out o
 
 Ned's credentials:
 
-Username: ned
-Password: nedned
+- Username: ned
+- Password: nedned
