@@ -1,4 +1,4 @@
-# How to use this?
+## How to use this?
 
 1. Run the challenge container using docker compose.
 
@@ -13,3 +13,12 @@
   ```
 
 3. You should now find yourself stuck with vim and a qrcode (ad).
+
+## Updating the flag
+
+If you need to update the flag, you will need to edit `utils/set-flag.c` and rebuilt `bins/set-flag`
+
+```
+# run this after edition set-flag.c
+gcc utils/set-flag.c -o bins/set-flag && strip bins/set-flag
+```
