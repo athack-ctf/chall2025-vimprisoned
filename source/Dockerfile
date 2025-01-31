@@ -10,15 +10,15 @@ RUN apt-get update && \
     apt-get clean
 
 # Creating the vimprison (with the flag)
-RUN echo '#!/bin/bash\ncd /home/ned/vimprison/ && export PATH="" && export YOU_HAVE_BEEN_LOOKING_FOR="ATHACKCTF{y0u_h4v3_35c4p3d_th3_vim_prison_0xdeadbeff}" && exec /usr/bin/vim "qrcode$(/usr/bin/shuf -e "1" "2" "3" -n 1)"' > /usr/local/bin/vimprison && \
+RUN echo '#!/bin/bash\ncd /home/zain/vimprison/ && export PATH="" && export YOU_HAVE_BEEN_LOOKING_FOR="ATHACKCTF{y0u_h4v3_35c4p3d_th3_vim_prison_0xdeadbeff}" && exec /usr/bin/vim "qrcode$(/usr/bin/shuf -e "1" "2" "3" -n 1)"' > /usr/local/bin/vimprison && \
     chmod +x /usr/local/bin/vimprison
 
-# Create a new user (ned) and set their shell to the vim wrapper script
-RUN useradd -m -s /usr/local/bin/vimprison ned && echo "ned:nedned" | chpasswd
+# Create a new user (zain) and set their shell to the vim wrapper script
+RUN useradd -m -s /usr/local/bin/vimprison zain && echo "zain:zainzain" | chpasswd
 
 # Copying files
-COPY vimprison /home/ned/vimprison
-COPY hint.txt /home/ned/hint.txt
+COPY vimprison /home/zain/vimprison
+COPY hint.txt /home/zain/hint.txt
 
 # Set up SSH server configuration
 RUN mkdir /var/run/sshd && \
