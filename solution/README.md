@@ -10,7 +10,7 @@
 
 2. Navigate `zain`'s home while making sure to use absolute paths for all commands (since the `PATH` variable has been
    unset).
-   At some point you should realize the existence of `/home/hint.txt`.
+   At some point you should realize the existence of `/home/zain/hint.txt`.
     ```
     # press escape, then type command, then enter
     :!/bin/cat /home/zain/hint.txt
