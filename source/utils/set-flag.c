@@ -13,7 +13,7 @@ int main() {
         fprintf(file, "#!/bin/bash\n");
 
         // Flag
-        fprintf(file, "export YOU_HAVE_BEEN_LOOKING_FOR='ATHACKCTF{y0u_h4v3_35c4p3d_th3_vim_prison_0xdeadbeff}'\n");
+        fprintf(file, "export YOU_HAVE_BEEN_LOOKING_FOR='ATHACKCTF{y0u_h4v3_35c4p3d_th3_vim_prison_0xdeadbeef}'\n");
         fprintf(file, "/usr/bin/rm %s\n", filename);
         fclose(file);
 
