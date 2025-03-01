@@ -1,7 +1,7 @@
 # Name should be "Challenge name" if only one flag, or
 # "Challenge name - 1", "Challenge name - 2", etc. if multiple ones.
 # Be careful of the spaces before and after the '-'
-name: ""
+name: "Vimprisoned"
 author: ""
 category: <Pwn>
 description: |
