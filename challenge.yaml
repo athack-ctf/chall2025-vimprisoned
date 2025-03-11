@@ -1,0 +1,29 @@
+name: "Vimprisoned"
+author: "Anis"
+category: Pwn
+description: |
+    Did you know that "How do I exit Vim?" is the most visited question on StackOverflow?
+
+    Using Zain's SSH credentials (provided below), you will have to break him out of his vimprisonment to get the flag.
+
+    Zain's credentials:
+
+    Username: zain
+    Password: zainzain
+    
+value: 150
+
+type: standard
+
+flags:
+  - type: "static"
+    content: "ATHACKCTF{y0u_h4v3_35c4p3d_th3_vim_prison_0xdeadbeef}"
+    data: "case_insensitive"
+
+tags:
+    - beginner
+    - ssh
+
+state: visible
+
+version: "0.1"

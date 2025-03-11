@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   chall2025-vimprisoned:
     build: .
