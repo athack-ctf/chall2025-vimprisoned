@@ -6,10 +6,10 @@ description: |
 
     Using Zain's SSH credentials (provided below), you will have to break him out of his vimprisonment to get the flag.
 
-    Zain's credentials:
+    ## Zain's credentials:
 
-    Username: zain
-    Password: zainzain
+    - Username: zain
+    - Password: zainzain
     
 value: 150
 
