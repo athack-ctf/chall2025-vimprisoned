@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  chall2025-vimprisoned:
+  vimprisoned:
     build: .
     image: athack-ctf/chall2025-vimprisoned:latest
     hostname: vimprisoned
