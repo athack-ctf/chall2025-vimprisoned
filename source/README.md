@@ -1,15 +1,22 @@
-## How to use this?
+## Running This Challenge
 
-1. Run the challenge container using docker compose.
+1. Build then run docker container
 
   ```
-  docker compose up
+  # build
+  docker build -t athack-ctf/chall2025-vimprisoned:latest .
+
+  # run
+  docker run -d --name vimprisoned \
+  --hostname vimprisoned \
+  -p 52031:22 \
+  athack-ctf/chall2025-vimprisoned:latest
   ```
 
 2. Connect to the ssh server using user `zain` (password `zainzain`).
 
   ```
-  ssh zain@localhost -p 2025
+  ssh -p 52031 zain@localhost
   ```
 
 3. You should now find yourself stuck with vim and a qrcode (ad).
