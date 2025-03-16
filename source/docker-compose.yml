@@ -1,9 +1,8 @@
-version: '3.8'
-
 services:
   vimprisoned:
     build: .
-    image: athack-ctf/chall2025-vimprisoned:latest
     hostname: vimprisoned
+    image: athack-ctf/chall2025-vimprisoned:latest
     ports:
-      - "2025:22"
+    - '52031:22'
+version: '3.8'
