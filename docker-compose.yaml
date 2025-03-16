@@ -2,7 +2,7 @@ version: '3.8'
 services:
   vimprisoned:
     image: athack-ctf/chall2025-vimprisoned:latest
-    build: .
+    build: ./source
     hostname: vimprisoned
     ports:
     - '52031:22'
