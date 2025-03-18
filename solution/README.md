@@ -27,4 +27,4 @@
 
 I decided to hide the flag in an arbitrary env variable (with an unguessable name) to avoid solves
 where participants simply use vim's built-in features to read files from the file system or echo the value of
-an env variable when its name is known.
+an env variable when its name is known. However, [this writeup](https://yun.ng/c/ctf/2025-athack-ctf/pwn/vimprison) revealed that you could use `:echo $` then press `TAB` to list all available env variables 😅.
